@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pillow Cafe - ร้านคาเฟ่ที่อบอุ่น</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --light-green: #06e636;
+            --light-brown: #000000;
+            --white: #FFFFFF;
+            --gray: #F6F6F6;
+            --dark-gray: #2a3532;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--white);
+            color: #080000;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Kanit', sans-serif;
+            font-weight: 500;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(80, 14, 14, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Kanit', sans-serif;
+            font-size: 24px;
+            color: var(--light-brown);
+            font-weight: 500;
+        }
+        
+        .logo span {
+            color: var(--light-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: z#333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--light-brown);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(34, 151, 34, 0.993), rgba(137, 137, 145, 0.4)), url('https://placehold.co/1200x600/lightbrown/white?text=The+Pillow+Cafe');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Menu Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--light-brown);
+            margin: 15px auto;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .menu-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 20px;
+        }
+        
+        .menu-item h3 {
+            color: var(--light-brown);
+            margin-bottom: 10px;
+        }
+        
+        .menu-item p {
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+        
+        .menu-item .price {
+            font-weight: bold;
+            color: var(--light-green);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--gray);
+            padding: 60px 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img    vb  v cbbv n b n vv cvc {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--light-brown);
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-detail i {
+            width: 30px;
+            color: var(--light-green);
+            font-size: 20px;
+        }
+        
+        .map {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #fffdfd;
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--light-brown);
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #1a0000;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-green);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #0f0000;
+            margin-top: 20px;
+            color: #250202;
+        }
+        
+        .visitor-counter {
+            background-color: var(--light-green);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">The <span>Pillow</span> Cafe</div>
+            <div class="mobile-menu-btn">☰</div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#home">หน้าแรก</a></li>
+                    <li><a href="#menu">เมนูอาหาร</a></li>
+                    <li><a href="#about">เกี่ยวกับเรา</a></li>
+                    <li><a href="#contact">ติดต่อเรา</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>ยินดีต้อนรับสู่ The Pillow Cafe</h1>
+            <p>สถานที่ที่คุณสามารถผ่อนคลายและเพลิดเพลินกับอาหารและเครื่องดื่มรสเลิศในบรรยากาศที่อบอุ่น</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">เมนูของเรา</h2>
+            <div class="menu-grid">
+                <!-- Menu items will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">เกี่ยวกับเรา</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>The Pillow Cafe เริ่มต้นจากความรักในกาแฟและอาหารอร่อย เราเชื่อว่าทุกๆ วันควรเริ่มต้นและจบลงด้วยรอยยิ้มและความสุขเล็กๆ นั่นคือเหตุผลที่เราสร้างสถานที่แห่งนี้ขึ้นมา</p>
+                    <p>เราเลือกใช้ส่วนผสมคุณภาพสูงจากแหล่งผลิตที่น่าเชื่อถือ เพื่อให้มั่นใจว่าทุกคำที่คุณลิ้มลองจะเต็มไปด้วยรสชาติอันยอดเยี่ยมและความประทับใจ</p>
+                    <p>ไม่ว่าคุณจะมารับประทานอาหารคนเดียว พบปะเพื่อนฝูง หรือทำงานไปด้วย เรามีบรรยากาศที่เหมาะสมสำหรับคุณ</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/600x400/lightbrown/white?text=About+Us" alt="เกี่ยวกับ The Pillow Cafe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">ติดต่อเรา</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>ข้อมูลติดต่อ</h3>
+                    <div class="contact-detail">
+                        <i>📞</i>
+                        <span>096 298 2408</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i>✉️</i>
+                        <span>thepillowcafe.th@gmail.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i>📱</i>
+                        <span>Facebook: The Pillow Cafe</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i>📍</i>
+                        <span>12/2 ซอยวัดมะเดื่อ ต.เสาธงหิน อ.บางใหญ่ จ.นนทบุรี 11140</span>
+                    </div>
+                    <div class="visitor-counter">
+                        ผู้เข้าชม: <span id="visitor-count">0</span>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.75842866264!2d100.403239175823!3d13.656697497922982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2be5b5d1d473d%3A0x7dc6e2bcee31b85b!2sBang%20Yai%2C%20Bang%20Yai%20District%2C%20Nonthaburi%2011140!5e0!3m2!1sen!2sth!4v1710863958353!5m2!1sen!2sth" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>The Pillow Cafe</h3>
+                <p>ร้านคาเฟ่ที่อบอุ่นพร้อมอาหารและเครื่องดื่มรสเลิศ</p>
+            </div>
+            <div class="footer-section">
+                <h3>เวลาทำการ</h3>
+                <p>จันทร์ - ศุกร์: 8:00 - 20:00 น.</p>
+                <p>เสาร์ - อาทิตย์: 9:00 - 21:00 น.</p>
+            </div>
+            <div class="footer-section">
+                <h3>ติดตามเรา</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Line</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>สาขาเทคโนโลยีธุรกิจดิจิทัล วิทยาลัยเทคโนโลยีพงษ์สวัสดิ์</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Data
+        const menuItems = [
+            { name: "น้ำชาไทย", image: "https://placehold.co/300x200/lightgreen/white?text=น้ำชาไทย", description: "ชาไทยแท้ๆ หอมกรุ่น เตรียมสดใหม่ทุกวัน", price: "45 บาท" },
+            { name: "น้ำชาเขียว", image: "https://placehold.co/300x200/lightgreen/white?text=น้ำชาเขียว", description: "ชาเขียวญี่ปุ่นแท้ กลิ่นหอมละมุน", price: "50 บาท" },
+            { name: "เฟรนช์ฟราย", image: "https://placehold.co/300x200/lightbrown/white?text=เฟรนช์ฟราย", description: "มันฝรั่งทอดกรอบนอกนุ่มใน", price: "65 บาท" },
+            { name: "ข้าวไก่ทอดเทอริยากิ", image: "https://placehold.co/300x200/lightbrown/white?text=ข้าวไก่ทอดเทอริยากิ", description: "ไก่ทอดซอสเทอริยากิเสิร์ฟพร้อมข้าวญี่ปุ่น", price: "120 บาท" },
+            { name: "สเต็กเนื้อ", image: "https://placehold.co/300x200/lightbrown/white?text=สเต็กเนื้อ", description: "สเต็กเนื้อนุ่มพร้อมซอสพิเศษและเครื่องเคียง", price: "250 บาท" },
+            { name: "ไก่ทอด", image: "https://placehold.co/300x200/lightbrown/white?text=ไก่ทอด", description: "ไก่ทอดสมุนไพรสูตรเฉพาะของทางร้าน", price: "110 บาท" },
+            { name: "เค้กส้ม", image: "https://placehold.co/300x200/lightgreen/white?text=เค้กส้ม", description: "เค้กส้มสดใหม่ หวานอมเปรี้ยว", price: "85 บาท" },
+            { name: "เค้กมะพร้าว", image: "https://placehold.co/300x200/lightgreen/white?text=เค้กมะพร้าว", description: "เค้กมะพร้าวหอมนุ่ม ละมุนลิ้น", price: "85 บาท" },
+            { name: "ยำมาม่าทะเลรวม", image: "https://placehold.co/300x200/lightgreen/white?text=ยำมาม่าทะเลรวม", description: "ยำมาม่าเผ็ดซี้ดพร้อมทะเลรวมสดใหม่", price: "130 บาท" },
+            { name: "พิซซ่า", image: "https://placehold.co/300x200/lightbrown/white?text=พิซซ่า", description: "พิซซ่าแผ่นบางกรอบ topped with ingredients you love", price: "180 บาท" }
+        ];
+
+        // Generate Menu Items
+        const menuGrid = document.querySelector('.menu-grid');
+        menuItems.forEach(item => {
+            const menuItem = document.createElement('div');
+            menuItem.classList.add('menu-item');
+            menuItem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div class="menu-item-content">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <span class="price">${item.price}</span>
+                </div>
+            `;
+            menuGrid.appendChild(menuItem);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const menu = document.getElementById('menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+
+        // Visitor Counter (simplified version)
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount = parseInt(visitorCount) + 1;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitor-count').textContent = visitorCount;
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                menu.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
