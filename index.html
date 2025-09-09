@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --light-green: #06e636;
+            --light-green: #0af10a;
             --light-brown: #000000;
             --white: #FFFFFF;
             --gray: #F6F6F6;
@@ -95,7 +95,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(34, 151, 34, 0.993), rgba(137, 137, 145, 0.4)), url('https://placehold.co/1200x600/lightbrown/white?text=The+Pillow+Cafe');
+            background: linear-gradient(rgba(4, 141, 4, 0.993), rgba(17, 21, 44, 0.4)), url('https://placehold.co/1200x600/lightbrown/white?text=The+Pillow+Cafe');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -201,7 +201,7 @@
             min-width: 300px;
         }
         
-        .about-image img    vb  v cbbv n b n vv cvc {
+        .about-image img    vb  v cbbv n b n vv cvc{
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -450,7 +450,7 @@
             <div class="footer-section">
                 <h3>ติดตามเรา</h3>
                 <div class="social-links">
-                    <a href="#">Facebook</a>
+                    <a href="https://www.facebook.com/thepillowcafe?locale=th_TH" target="_blank">Facebook</a>
                     <a href="#">Instagram</a>
                     <a href="#">Line</a>
                 </div>
@@ -464,16 +464,15 @@
     <script>
         // Menu Data
         const menuItems = [
-            { name: "น้ำชาไทย", image: "https://placehold.co/300x200/lightgreen/white?text=น้ำชาไทย", description: "ชาไทยแท้ๆ หอมกรุ่น เตรียมสดใหม่ทุกวัน", price: "45 บาท" },
-            { name: "น้ำชาเขียว", image: "https://placehold.co/300x200/lightgreen/white?text=น้ำชาเขียว", description: "ชาเขียวญี่ปุ่นแท้ กลิ่นหอมละมุน", price: "50 บาท" },
-            { name: "เฟรนช์ฟราย", image: "https://placehold.co/300x200/lightbrown/white?text=เฟรนช์ฟราย", description: "มันฝรั่งทอดกรอบนอกนุ่มใน", price: "65 บาท" },
-            { name: "ข้าวไก่ทอดเทอริยากิ", image: "https://placehold.co/300x200/lightbrown/white?text=ข้าวไก่ทอดเทอริยากิ", description: "ไก่ทอดซอสเทอริยากิเสิร์ฟพร้อมข้าวญี่ปุ่น", price: "120 บาท" },
-            { name: "สเต็กเนื้อ", image: "https://placehold.co/300x200/lightbrown/white?text=สเต็กเนื้อ", description: "สเต็กเนื้อนุ่มพร้อมซอสพิเศษและเครื่องเคียง", price: "250 บาท" },
-            { name: "ไก่ทอด", image: "https://placehold.co/300x200/lightbrown/white?text=ไก่ทอด", description: "ไก่ทอดสมุนไพรสูตรเฉพาะของทางร้าน", price: "110 บาท" },
-            { name: "เค้กส้ม", image: "https://placehold.co/300x200/lightgreen/white?text=เค้กส้ม", description: "เค้กส้มสดใหม่ หวานอมเปรี้ยว", price: "85 บาท" },
-            { name: "เค้กมะพร้าว", image: "https://placehold.co/300x200/lightgreen/white?text=เค้กมะพร้าว", description: "เค้กมะพร้าวหอมนุ่ม ละมุนลิ้น", price: "85 บาท" },
-            { name: "ยำมาม่าทะเลรวม", image: "https://placehold.co/300x200/lightgreen/white?text=ยำมาม่าทะเลรวม", description: "ยำมาม่าเผ็ดซี้ดพร้อมทะเลรวมสดใหม่", price: "130 บาท" },
-            { name: "พิซซ่า", image: "https://placehold.co/300x200/lightbrown/white?text=พิซซ่า", description: "พิซซ่าแผ่นบางกรอบ topped with ingredients you love", price: "180 บาท" }
+            { name: "น้ำชาไทย", image: "img/น้ำชาไทย.jpg", description: "ชาไทยแท้ๆ หอมกรุ่น เตรียมสดใหม่ทุกวัน", price: "45 บาท" },
+            { name: "เฟรนช์ฟราย", image: "img/เฟรชฟราย.jpg", description: "มันฝรั่งทอดกรอบนอกนุ่มใน", price: "65 บาท" },
+            { name: "ข้าวไก่ทอดเทอริยากิ", image: "img/ข้าวไก่ทอดเทอริยากิ.jpg", description: "ไก่ทอดซอสเทอริยากิเสิร์ฟพร้อมข้าวญี่ปุ่น", price: "120 บาท" },
+            { name: "สเต็กเนื้อ", image: "img/สเต็กเนื้อ.jpg", description: "สเต็กเนื้อนุ่มพร้อมซอสพิเศษและเครื่องเคียง", price: "250 บาท" },
+            { name: "ไก่ทอด", image: "img/ไก่ทอด.jpg", description: "ไก่ทอดสมุนไพรสูตรเฉพาะของทางร้าน", price: "110 บาท" },
+            { name: "เค้กส้ม", image: "img/เค้กส้ม.jpg", description: "เค้กส้มสดใหม่ หวานอมเปรี้ยว", price: "85 บาท" },
+            { name: "เค้กมะพร้าว", image: "img/เค้กมะพร้าว.jpg", description: "เค้กมะพร้าวหอมนุ่ม ละมุนลิ้น", price: "85 บาท" },
+            { name: "ยำมาม่าทะเลรวม", image: "img/ยำมาม่าทะเลรวม.jpg", description: "ยำมาม่าเผ็ดซี้ดพร้อมทะเลรวมสดใหม่", price: "130 บาท" },
+            { name: "ส้มตำปูปาร้า", image: "img/ส้มตำปูปาร้า.jpg", description: "ส้มตำปูปาร้าแซ่บนัว ", price: "100 บาท" }
         ];
 
         // Generate Menu Items
