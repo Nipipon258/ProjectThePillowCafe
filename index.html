@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pillow Cafe - ร้านคาเฟ่ที่อบอุ่น</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Sarabun:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <style>
         :root {
             --light-green: #0af10a;
@@ -13,32 +17,35 @@
             --gray: #F6F6F6;
             --dark-gray: #2a3532;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Sarabun', sans-serif;
             background-color: var(--white);
             color: #080000;
             line-height: 1.6;
         }
-        
-        h1, h2, h3, h4 {
+
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Kanit', sans-serif;
             font-weight: 500;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background-color: var(--white);
@@ -48,54 +55,54 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-        
+
         .logo {
             font-family: 'Kanit', sans-serif;
             font-size: 24px;
             color: var(--light-brown);
             font-weight: 500;
         }
-        
+
         .logo span {
             color: var(--light-green);
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 30px;
         }
-        
+
         nav ul li a {
             text-decoration: none;
             color: z#333;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         nav ul li a:hover {
             color: var(--light-brown);
         }
-        
+
         .mobile-menu-btn {
             display: none;
             font-size: 24px;
             cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(4, 141, 4, 0.993), rgba(17, 21, 44, 0.4)), url('https://placehold.co/1200x600/lightbrown/white?text=The+Pillow+Cafe');
+            background: linear-gradient(rgba(4, 141, 4, 0.993), rgba(60, 230, 74, 0.4)), url('https://placehold.co/1200x600/lightbrown/white?text=The+Pillow+Cafe');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -106,25 +113,25 @@
             color: var(--white);
             margin-top: 70px;
         }
-        
+
         .hero-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        
+
         .hero-content p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         /* Menu Section */
         .section-title {
             text-align: center;
             margin: 60px 0 40px;
             position: relative;
         }
-        
+
         .section-title:after {
             content: '';
             display: block;
@@ -133,14 +140,14 @@
             background-color: var(--light-brown);
             margin: 15px auto;
         }
-        
+
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
         }
-        
+
         .menu-item {
             background-color: var(--white);
             border-radius: 10px;
@@ -148,98 +155,98 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-        
+
         .menu-item:hover {
             transform: translateY(-10px);
         }
-        
+
         .menu-item img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        
+
         .menu-item-content {
             padding: 20px;
         }
-        
+
         .menu-item h3 {
             color: var(--light-brown);
             margin-bottom: 10px;
         }
-        
+
         .menu-item p {
             color: var(--dark-gray);
             margin-bottom: 15px;
         }
-        
+
         .menu-item .price {
             font-weight: bold;
             color: var(--light-green);
         }
-        
+
         /* About Section */
         .about {
             background-color: var(--gray);
             padding: 60px 0;
         }
-        
+
         .about-content {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
         }
-        
+
         .about-text {
             flex: 1;
             min-width: 300px;
             padding-right: 30px;
         }
-        
+
         .about-image {
             flex: 1;
             min-width: 300px;
         }
-        
-        .about-image img    vb  v cbbv n b n vv cvc{
+
+        .about-image img vb v cbbv n b n vv cvc {
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Contact Section */
         .contact {
             padding: 60px 0;
         }
-        
+
         .contact-container {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
         }
-        
+
         .contact-info {
             flex: 1;
             min-width: 300px;
         }
-        
+
         .contact-info h3 {
             color: var(--light-brown);
             margin-bottom: 20px;
         }
-        
+
         .contact-detail {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
         }
-        
+
         .contact-detail i {
             width: 30px;
             color: var(--light-green);
             font-size: 20px;
         }
-        
+
         .map {
             flex: 1;
             min-width: 300px;
@@ -247,54 +254,55 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        
+
         .map iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
-        
+
         /* Footer */
         footer {
             background-color: #fffdfd;
             color: var(--white);
             padding: 40px 0 20px;
         }
-        
+
         .footer-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        
+
         .footer-section {
             flex: 1;
             min-width: 250px;
             margin-bottom: 30px;
         }
-        
+
         .footer-section h3 {
             margin-bottom: 20px;
             color: var(--light-brown);
         }
-        
-        .footer-section p, .footer-section a {
+
+        .footer-section p,
+        .footer-section a {
             color: #1a0000;
             margin-bottom: 10px;
             display: block;
             text-decoration: none;
         }
-        
+
         .footer-section a:hover {
             color: var(--light-green);
         }
-        
+
         .social-links a {
             display: inline-block;
             margin-right: 15px;
             font-size: 20px;
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -302,7 +310,7 @@
             margin-top: 20px;
             color: #250202;
         }
-        
+
         .visitor-counter {
             background-color: var(--light-green);
             color: var(--white);
@@ -312,13 +320,13 @@
             display: inline-block;
             margin-top: 10px;
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             nav ul {
                 display: none;
                 position: absolute;
@@ -330,25 +338,26 @@
                 padding: 20px;
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
-            
+
             nav ul.show {
                 display: flex;
             }
-            
+
             nav ul li {
                 margin: 10px 0;
             }
-            
+
             .hero-content h1 {
                 font-size: 36px;
             }
-            
+
             .hero-content p {
                 font-size: 18px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -357,20 +366,22 @@
             <div class="mobile-menu-btn">☰</div>
             <nav>
                 <ul id="menu">
-                    <li><a href="#home">หน้าแรก</a></li>
-                    <li><a href="#menu">เมนูอาหาร</a></li>
-                    <li><a href="#about">เกี่ยวกับเรา</a></li>
-                    <li><a href="#contact">ติดต่อเรา</a></li>
+                   <li><a href="#home" style="color: black;">หน้าแรก</a></li>
+                    <li><a href="#menu" style="color: black;">เมนูอาหาร</a></li>
+                    <li><a href="#about" style="color: black;">เกี่ยวกับเรา</a></li>
+                    <li><a href="#contact" style="color: black;">ติดต่อเรา</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section -->   
     <section id="home" class="hero">
         <div class="container hero-content">
             <h1>ยินดีต้อนรับสู่ The Pillow Cafe</h1>
-            <p>สถานที่ที่คุณสามารถผ่อนคลายและเพลิดเพลินกับอาหารและเครื่องดื่มรสเลิศในบรรยากาศที่อบอุ่น</p>
+            <p style="text-align: center;">
+            สถานที่ที่คุณสามารถผ่อนคลายและเพลิดเพลินกับอาหารและเครื่องดื่มรสเลิศในบรรยากาศที่อบอุ่น
+            </p>
         </div>
     </section>
 
@@ -390,12 +401,50 @@
             <h2 class="section-title">เกี่ยวกับเรา</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>The Pillow Cafe เริ่มต้นจากความรักในกาแฟและอาหารอร่อย เราเชื่อว่าทุกๆ วันควรเริ่มต้นและจบลงด้วยรอยยิ้มและความสุขเล็กๆ นั่นคือเหตุผลที่เราสร้างสถานที่แห่งนี้ขึ้นมา</p>
-                    <p>เราเลือกใช้ส่วนผสมคุณภาพสูงจากแหล่งผลิตที่น่าเชื่อถือ เพื่อให้มั่นใจว่าทุกคำที่คุณลิ้มลองจะเต็มไปด้วยรสชาติอันยอดเยี่ยมและความประทับใจ</p>
-                    <p>ไม่ว่าคุณจะมารับประทานอาหารคนเดียว พบปะเพื่อนฝูง หรือทำงานไปด้วย เรามีบรรยากาศที่เหมาะสมสำหรับคุณ</p>
+                    <p>The Pillow Cafe คาเฟ่ในสวน บรรยากาศผ่อนคลาย รายล้อมด้วยต้นไม้ 
+                        เหมาะกับการมานั่งชิลล์ เป็นมิตรกับเด็ก มีพื้นที่ให้เด็กเล่น และยังมีที่จอดรถสะดวก</p>
+                    <p>เราเลือกใช้ส่วนผสมคุณภาพสูงจากแหล่งผลิตที่น่าเชื่อถือ
+                        เพื่อให้มั่นใจว่าทุกคำที่คุณลิ้มลองจะเต็มไปด้วยรสชาติอันยอดเยี่ยมและความประทับใจ</p>
+                    <p>ไม่ว่าคุณจะมารับประทานอาหารคนเดียว พบปะเพื่อนฝูง หรือทำงานไปด้วย เรามีบรรยากาศที่เหมาะสมสำหรับคุณ
+                        “รสชาติโอเค บรรยากาศร้านแนวสวน นั่งสบายๆ เจ้าของร้านเป็นกันเอง ชิลล์ๆ…เหมาะสำหรับเด็กๆ มีสถานที่ให้เด็กเล่นได้
+                    </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://placehold.co/600x400/lightbrown/white?text=About+Us" alt="เกี่ยวกับ The Pillow Cafe">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/โลโก้ร้าน 3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/รูปวิวร้าน 1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/วิวร้าน 2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/วิวร้าน 3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -429,7 +478,9 @@
                     </div>
                 </div>
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.75842866264!2d100.403239175823!3d13.656697497922982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2be5b5d1d473d%3A0x7dc6e2bcee31b85b!2sBang%20Yai%2C%20Bang%20Yai%20District%2C%20Nonthaburi%2011140!5e0!3m2!1sen!2sth!4v1710863958353!5m2!1sen!2sth" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.75842866264!2d100.403239175823!3d13.656697497922982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2be5b5d1d473d%3A0x7dc6e2bcee31b85b!2sBang%20Yai%2C%20Bang%20Yai%20District%2C%20Nonthaburi%2011140!5e0!3m2!1sen!2sth!4v1710863958353!5m2!1sen!2sth"
+                        allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -445,14 +496,12 @@
             <div class="footer-section">
                 <h3>เวลาทำการ</h3>
                 <p>จันทร์ - ศุกร์: 8:00 - 20:00 น.</p>
-                <p>เสาร์ - อาทิตย์: 9:00 - 21:00 น.</p>
+                <p>เสาร์ - อาทิตย์: 9:00 - 18:00 น.</p>
             </div>
             <div class="footer-section">
                 <h3>ติดตามเรา</h3>
                 <div class="social-links">
                     <a href="https://www.facebook.com/thepillowcafe?locale=th_TH" target="_blank">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Line</a>
                 </div>
             </div>
         </div>
@@ -468,9 +517,9 @@
             { name: "เฟรนช์ฟราย", image: "img/เฟรชฟราย.jpg", description: "มันฝรั่งทอดกรอบนอกนุ่มใน", price: "65 บาท" },
             { name: "ข้าวไก่ทอดเทอริยากิ", image: "img/ข้าวไก่ทอดเทอริยากิ.jpg", description: "ไก่ทอดซอสเทอริยากิเสิร์ฟพร้อมข้าวญี่ปุ่น", price: "120 บาท" },
             { name: "สเต็กเนื้อ", image: "img/สเต็กเนื้อ.jpg", description: "สเต็กเนื้อนุ่มพร้อมซอสพิเศษและเครื่องเคียง", price: "250 บาท" },
-            { name: "ไก่ทอด", image: "img/ไก่ทอด.jpg", description: "ไก่ทอดสมุนไพรสูตรเฉพาะของทางร้าน", price: "110 บาท" },
-            { name: "เค้กส้ม", image: "img/เค้กส้ม.jpg", description: "เค้กส้มสดใหม่ หวานอมเปรี้ยว", price: "85 บาท" },
-            { name: "เค้กมะพร้าว", image: "img/เค้กมะพร้าว.jpg", description: "เค้กมะพร้าวหอมนุ่ม ละมุนลิ้น", price: "85 บาท" },
+            { name: "ไก่ทอด", image: "img/ไก่ทอด.jpg", description: "ไก่ทอดสมุนไพรสูตรเฉพาะของทางร้าน", price: "100 บาท" },
+            { name: "เค้กส้ม", image: "img/เค้กส้ม.jpg", description: "เค้กส้มสดใหม่ หวานอมเปรี้ยว", price: "50 บาท" },
+            { name: "เค้กมะพร้าว", image: "img/เค้กมะพร้าว.jpg", description: "เค้กมะพร้าวหอมนุ่ม ละมุนลิ้น", price: "50 บาท" },
             { name: "ยำมาม่าทะเลรวม", image: "img/ยำมาม่าทะเลรวม.jpg", description: "ยำมาม่าเผ็ดซี้ดพร้อมทะเลรวมสดใหม่", price: "130 บาท" },
             { name: "ส้มตำปูปาร้า", image: "img/ส้มตำปูปาร้า.jpg", description: "ส้มตำปูปาร้าแซ่บนัว ", price: "100 บาท" }
         ];
@@ -494,7 +543,7 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const menu = document.getElementById('menu');
-        
+
         mobileMenuBtn.addEventListener('click', () => {
             menu.classList.toggle('show');
         });
@@ -511,16 +560,19 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 window.scrollTo({
                     top: targetElement.offsetTop - 70,
                     behavior: 'smooth'
                 });
-                
+
                 // Close mobile menu if open
                 menu.classList.remove('show');
             });
         });
     </script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 </body>
+
 </html>
